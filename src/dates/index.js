@@ -1,18 +1,22 @@
-// import moment here; use this package in each function
-
 const today = () => {
-  // write code for dates.today
+  let today = new Date()
+  return today.toLocaleDateString('default', { weekday: 'long' });
 
 }
 
 const calendar = () => {
-  // write code for dates.calendar
-
+  let today = new Date()
+  return today.toLocaleString('default', { month: 'short', day:'numeric', year: 'numeric'})
 }
 
 const currentTime = () => {
-  // write code for dates.currentTime
-
+  let today = new Date()
+  let time = today.toLocaleTimeString();
+  if(time[1] == ':'){
+    time = '0' + time;
+  }
+  return time
+  
 }
 
 module.exports = {
